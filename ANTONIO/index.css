@@ -1,0 +1,14 @@
+body{
+    background-color:blueviolet;
+}
+ul{ display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    padding: 18px;
+
+}
+a{
+    color: antiquewhite;
+    text-decoration: none;
+}
