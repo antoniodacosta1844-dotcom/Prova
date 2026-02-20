@@ -1,111 +1,69 @@
-# Prova<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Layout Modelo</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Arial;
-    background:#ddd;
-}
-
-.container{
-    width:90%;
-    margin:auto;
-}
-
-.menu{
-    background:#8BC34A;
-    text-align:center;
-    padding:20px;
-    font-weight:bold;
-    font-size:20px;
-}
-
-.sidebar{
-    background:#8BC34A;
-    text-align:center;
-    padding:50px;
-    margin-top:5px;
-    font-weight:bold;
-}
-
-.fotos{
-    display:flex;
-    justify-content:space-around;
-    margin:30px 0;
-}
-
-.foto{
-    width:150px;
-    height:150px;
-    background:#8BC34A;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-}
-
-.textos{
-    display:flex;
-    justify-content:space-between;
-}
-
-.texto{
-    width:48%;
-    background:#8BC34A;
-    padding:40px;
-    text-align:center;
-    font-weight:bold;
-}
-
-.footer{
-    background:#8BC34A;
-    text-align:center;
-    padding:20px;
-    margin-top:20px;
-    font-weight:bold;
-}
-</style>
-
+    <title>  ANGOLANO  </title>  
+ <style>
+      body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #aa9797;
+            text-align: center;
+        }
+         button:hover {
+            background-color: #19a347;
+        }
+        #mensagem {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+ </style>
 </head>
-<body>
+    <header>
+        🌟 Meu Site com Imagem e Vídeo e audio
+    </head>
+     <body>
 
-<div class="container">
+    <h1>USO DE , CSS e JavaScript</h1>
+    <button onclick="mudarCor()">Clique Aqui</button>
 
-<div class="menu">MENU</div>
-<div class="sidebar">SIDE BAR</div>
+    <div id="mensagem"></div>
 
-<div class="">
-   
-    <div class="fotos">
-    <img src="OIP.webp" class="foto" alt="Foto 1">
-    <img src="img.jpg" class="foto" alt="Foto 1">
-     <img src="WhatsApp Image 2026-02-02 at 10.00.33.jpeg" class="foto" alt="Foto 1">
-</div>
-
-</div>
-
-<div class="textos">
-    <div class="textos">
-    <div class="texto">
-        <h2>MEUS DEFEITOS</h2>
-        <p>MINHAS QUALIDADES.</p>
-    </div>
-    <div class="texto">
-        <h2>SOBRE MI</h2>
-        <p>NOS.</p>
-    </div>
-</div>
-
-</div>
-
-<div class="footer">2026</div>
-
-</div>
+    <!-- JavaScript -->
+    <script>
+        function mudarCor() {
+            const cores = ["#FFB6C1", "#ADD8E6", "#90EE90", "#FFD700", "#FFA07A"];
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            
+            document.body.style.backgroundColor = corAleatoria;
+            document.getElementById("mensagem").innerHTML = 
+                "Você clicou no botão! 🎉";
+        }
+    </script>
 
 </body>
+
+          <h2>-- IMAGEM --</h2>
+<img src="OIP.webp."controls width="300">
+
+
+          <h2>-- VIDIO --</h2>
+<video src="Curso Word _01 - Apresentação do Curso de Word 2016(360P).mp4" controls width="300">
+    </video>
+               <h2>-- AUDIO --</h2>
+<audio src="1-10 Tradição Perfeita.mp3"controls width="300">
+    </audio>
+       
+              <H3>-- FORMULÁRIO --</H3>
+<form>
+        <input type="text" id="nome" placeholder="Digite seu nome" required><br>
+        <input type="email" id="email" placeholder="Digite seu email" required><br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
 </html>
+
+
+
+
 
