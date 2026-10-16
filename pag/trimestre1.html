@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Trimestre</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter', Arial;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+.header{
+position:sticky;
+top:0;
+padding:20px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+background:#000;
+border-bottom:2px solid #ccff00;
+}
+
+.header h1 a{
+text-decoration:none;
+font-weight:800;
+font-size:22px;
+
+background: linear-gradient(90deg,#00f5ff,#00ff88,#ccff00,#00f5ff);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:gradientMove 6s linear infinite;
+}
+
+/* MENU */
+
+nav{
+display:flex;
+gap:15px;
+}
+
+nav a{
+text-decoration:none;
+padding:10px 20px;
+border-radius:40px;
+border:2px solid #ccff00;
+color:#fff;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+background:linear-gradient(90deg,#00f5ff,#00ff88,#ccff00);
+color:#000;
+}
+
+/* ANIMAÇÃO GRADIENTE */
+
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+/* MAIN */
+
+main{
+padding:50px;
+display:flex;
+justify-content:center;
+}
+
+/* BOX DO TRIMESTRE */
+
+.trimestre-box{
+background:#111;
+padding:40px;
+border-radius:12px;
+border:2px solid #222;
+max-width:800px;
+width:100%;
+text-align:center;
+}
+
+.trimestre-box h2{
+margin-bottom:30px;
+font-size:36px;
+font-weight:800;
+
+background: linear-gradient(90deg,#00f5ff,#00ff88,#ccff00,#00f5ff);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:gradientMove 6s linear infinite;
+}
+
+/* TRABALHOS */
+
+.trabalhos{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.trabalhos a{
+padding:18px 30px;
+border-radius:40px;
+border:2px solid #ccff00;
+text-decoration:none;
+color:#fff;
+font-weight:bold;
+font-size:18px;
+transition:.3s;
+}
+
+.trabalhos a:hover{
+background:linear-gradient(90deg,#00f5ff,#00ff88,#ccff00);
+color:#000;
+}
+
+/* TRIÂNGULO ANIMADO */
+
+.shape{
+position:absolute;
+right:120px;
+top:300px;
+width:200px;
+height:200px;
+background:linear-gradient(135deg,#00f5ff,#00ff88,#ccff00);
+clip-path:polygon(50% 0%,100% 100%,0% 100%);
+animation:rotateShape 10s linear infinite;
+}
+
+@keyframes rotateShape{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.header{
+flex-direction:column;
+gap:10px;
+}
+
+main{
+padding:20px;
+}
+
+.shape{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="shape"></div>
+
+<header class="header">
+
+<h1><a href="../index.html">HOME</a></h1>
+
+<nav>
+<a href="trimestre1.html">Iº Trimestre</a>
+<a href="trimestre2.html">IIº Trimestre</a>
+<a href="trimestre3.html">IIIº Trimestre</a>
+</nav>
+
+</header>
+
+<main>
+
+<div class="trimestre-box">
+
+<h2>Trabalhos do Iº Trimestre</h2>
+
+<div class="trabalhos">
+  <a href="t1.html">T1</a>
+<a href="https://nunes-py.github.io/Agende-aqu-/" target="_blank">T2</a>
+</div>
+
+</div>
+
+</main>
+
+</body>
+  </html>
