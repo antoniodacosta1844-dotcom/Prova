@@ -1,231 +1,218 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I Trimestre</title>
-
+  <title>Iº Trimestre - Sistema de Agendamento | IMPC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins', sans-serif;}
+    body{background:#f0f4f8;color:#1a2b4c;line-height:1.7;}
 
-    body{
-      background:#072849;
-      color:#000;
-    }
-
-    /* ===== BARRA DE NAVEGAÇÃO ===== */
+    /* NAV MODERNA */
     .header{
-      position:sticky;
-      top:0;
-      background:#e9ecef;
-      border-bottom:3px solid #000;
-      padding:15px 25px;
-      display:flex;
-      justify-content:space-around;
-      align-items:center;
-      z-index:10;
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #e2e8f0;
+      padding:15px 5%;
+      display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 2px 20px rgba(0,0,0,0.05);
     }
-
-    .header h1 a{
-      text-decoration:none;
-      padding:8px 16px;
-      background:#fff;
-      color:#000;
-      border:2px solid #000;
-      font-weight:bold;
+    .logo-nav{font-weight:700;color:#072849;display:flex;align-items:center;gap:8px;}
+    .logo-nav i{color:#0ea5e9;}
+    .header nav{display:flex;gap:10px;}
+    .header nav a{
+      text-decoration:none;padding:8px 18px;
+      border-radius:30px;font-weight:600;font-size:0.85rem;
+      transition:0.3s;
     }
+    .header nav a.active{background:#072849;color:#fff;}
+    .header nav a:not(.active){background:#f1f5f9;color:#334155;}
+    .header nav a:not(.active):hover{background:#072849;color:#fff;transform:translateY(-2px);}
 
-    .header h1 a:hover{
-      background:#000;
-      color:#fff;
-    }
-
-    nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      text-decoration:none;
-      padding:8px 16px;
-      background:#fff;
-      color:#000;
-      border:2px solid #000;
-      font-weight:bold;
-    }
-
-    nav a:hover{
-      background:#000;
-      color:#fff;
-    }
-
-    /* ===== CABEÇALHO ===== */
+    /* HERO CABEÇALHO BONITO */
     .cabecalho{
-      background:#ffffff;
-      border-bottom:4px solid #000;
-      text-align:center;
-      padding:25px 10px;
+      background:linear-gradient(135deg, #072849 0%, #0c4a6e 50%, #0ea5e9 100%);
+      color:#fff;text-align:center;
+      padding:60px 20px 80px;
+      position:relative;overflow:hidden;
     }
-
+    .cabecalho::before{
+      content:'';position:absolute;top:-50%;left:-50%;
+      width:200%;height:200%;
+      background:radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size:40px 40px;animation:move 60s linear infinite;
+    }
+    @keyframes move{to{transform:translate(40px,40px);}}
+    .cabecalho > *{position:relative;z-index:1;}
     .cabecalho img{
-      max-width:220px;
-      margin-bottom:10px;
+      width:90px;height:90px;border-radius:50%;
+      border:4px solid #fff;box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      background:#fff;object-fit:cover;margin-bottom:15px;
     }
-
-    .cabecalho h2{
-      font-size:1.3rem;
-      text-transform:uppercase;
-      font-weight:bold;
+    .badge{
+      display:inline-block;background:rgba(255,255,255,0.2);
+      backdrop-filter:blur(5px);padding:6px 14px;
+      border-radius:20px;font-size:0.75rem;letter-spacing:1px;
+      margin-bottom:15px;border:1px solid rgba(255,255,255,0.3);
     }
-
+    .cabecalho h2{font-size:1rem;font-weight:300;letter-spacing:3px;opacity:0.9;}
     .cabecalho h3{
-      font-size:1.1rem;
-      margin-top:10px;
-      line-height:1.4;
+      font-size:1.8rem;font-weight:700;
+      max-width:700px;margin:15px auto 0;
+      line-height:1.3;text-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+    .dados-aluno-mini{
+      margin-top:25px;font-size:0.85rem;opacity:0.8;
     }
 
-    /* ===== CONTEÚDO ===== */
-    main{
-      padding:40px 20px;
-    }
-
+    /* CONTAINER */
+    main{padding:0 20px;margin-top:-50px;position:relative;z-index:2;}
     .container{
-      max-width:900px;
-      margin:auto;
-      background:#fff;
-      border:2px solid #000;
-      padding:30px;
+      max-width:950px;margin:auto;
+      display:grid;gap:20px;
+    }
+    .card{
+      background:#fff;border-radius:20px;
+      padding:30px;border:1px solid #e2e8f0;
+      box-shadow:0 10px 40px rgba(0,0,0,0.06);
+      transition:0.3s;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.1);}
+    .card-header{
+      display:flex;align-items:center;gap:12px;
+      margin-bottom:15px;
+    }
+    .card-icon{
+      width:45px;height:45px;border-radius:12px;
+      display:grid;place-items:center;color:#fff;font-size:1.2rem;
+    }
+    .card h4{font-size:1.1rem;font-weight:700;color:#072849;}
+    .card p, .card li{color:#475569;font-size:0.95rem;}
+    .card ul{list-style:none;padding:0;}
+    .card ul li{
+      padding:8px 0 8px 28px;position:relative;
+    }
+    .card ul li::before{
+      content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;
+      position:absolute;left:0;top:10px;
+      width:20px;height:20px;background:#e0f2fe;color:#0284c7;
+      border-radius:50%;display:grid;place-items:center;font-size:0.6rem;
     }
 
-    .conteudo{
-      margin-bottom:30px;
+    /* CORES ICONES */
+    .c1 .card-icon{background:linear-gradient(135deg,#0ea5e9,#06b6d4);}
+    .c2 .card-icon{background:linear-gradient(135deg,#8b5cf6,#a78bfa);}
+    .c3 .card-icon{background:linear-gradient(135deg,#f59e0b,#fbbf24);}
+    .c4 .card-icon{background:linear-gradient(135deg,#ef4444,#f87171);}
+    .c5 .card-icon{background:linear-gradient(135deg,#10b981,#34d399);}
+    .c6 .card-icon{background:linear-gradient(135deg,#072849,#1e40af);}
+
+    /* TECH BADGES */
+    .techs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+    .techs span{
+      background:#f1f5f9;border:1px solid #e2e8f0;
+      padding:6px 12px;border-radius:8px;font-size:0.8rem;font-weight:600;
     }
 
-    .conteudo h4{
-      border-bottom:2px solid #000;
-      padding-bottom:6px;
-      margin-bottom:12px;
-      text-transform:uppercase;
-      font-size:1.2rem;
+    footer{
+      text-align:center;padding:40px;color:#94a3b8;font-size:0.85rem;
     }
 
-    .conteudo p,
-    .conteudo li{
-      font-size:1rem;
-      line-height:1.6;
-    }
-
-    ul{
-      padding-left:20px;
-    }
-
-    @media(max-width:768px){
-      main{
-        padding:20px;
-      }
+    @media(max-width:700px){
+      .cabecalho h3{font-size:1.3rem;}
+      .header{flex-direction:column;gap:10px;}
     }
   </style>
 </head>
-
 <body>
 
-<!-- NAVEGAÇÃO -->
 <header class="header">
-  <h1><a href="../index.html">HOME</a></h1>
-
+  <div class="logo-nav"><i class="fa-solid fa-hospital"></i> MedAgenda</div>
   <nav>
-    <a href="trimestre1.html">Iº Trimestre</a>
-    <a href="trimestre2.html">IIº Trimestre</a>
-    <a href="trimestre3.html">IIIº Trimestre</a>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> HOME</a>
+    <a href="trimestre1.html" class="active">Iº TRIMESTRE</a>
+    <a href="trimestre2.html">IIº TRIMESTRE</a>
+    <a href="trimestre3.html">IIIº TRIMESTRE</a>
   </nav>
 </header>
 
-<!-- CABEÇALHO -->
 <div class="cabecalho">
-  <img src="../files/1.jpg" alt="Instituto Médio Comercial de Luanda">
-
-  <h2>Instituto Médio Comercial de Luanda</h2>
-
-  <h3>
-    Criação de um Sistema de Agendamento de Consultas Médicas<br>
-    com Suporte Multicanal e Integração ao WhatsApp
-  </h3>
+  <div class="badge"><i class="fa-solid fa-graduation-cap"></i> INSTITUTO MÉDIO POLITÉCNICO DO CAZENGA • IMPC Nº7672</div>
+  <img src="../files/1.jpg" alt="IMPC">
+  <h2>INSTITUTO MÉDIO COMERCIAL DE LUANDA</h2>
+  <h3>Criação de um Sistema de Agendamento de Consultas Médicas com Suporte Multicanal e Integração ao WhatsApp</h3>
+  <div class="dados-aluno-mini">
+    <i class="fa-solid fa-user"></i> RIVALDO MENDES DA COSTA • Nº38 • Sala 3 • Classe 10ª • T.M.E.C • 2026
+  </div>
 </div>
 
-<!-- CONTEÚDO COMPLETO -->
 <main>
   <div class="container">
 
-    <div class="conteudo">
-      <h4>Objetivo Geral</h4>
-      <p>
-        Criar um sistema inteligente e acessível de agendamento hospitalar
-        que otimize o atendimento ao paciente através da integração com
-        múltiplas plataformas de comunicação.
-      </p>
+    <div class="card c1">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h4>Objetivo Geral</h4>
+      </div>
+      <p>Criar um sistema inteligente e acessível de agendamento hospitalar que otimize o atendimento ao paciente através da integração com múltiplas plataformas de comunicação, reduzindo filas e humanizando o atendimento.</p>
     </div>
 
-    <div class="conteudo">
-      <h4>Objetivos Específicos</h4>
+    <div class="card c2">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-list-check"></i></div>
+        <h4>Objetivos Específicos</h4>
+      </div>
       <ul>
         <li>Permitir a marcação de consultas por web, aplicativo e WhatsApp.</li>
-        <li>Integrar confirmações e lembretes automáticos via WhatsApp.</li>
-        <li>Reduzir o tempo de espera e melhorar a gestão de agendas médicas.</li>
+        <li>Integrar confirmações e lembretes automáticos via WhatsApp Business API.</li>
+        <li>Reduzir o tempo de espera e melhorar a gestão de agendas médicas em tempo real.</li>
       </ul>
     </div>
 
-    <div class="conteudo">
-      <h4>Objeto de Estudo</h4>
-      <p>
-        Fluxo de agendamento de consultas nos Hospitais
-        Jorginaachel, Neves BemDinha e Jon Pia Gê.
-      </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="card c3">
+        <div class="card-header"><div class="card-icon"><i class="fa-solid fa-microscope"></i></div><h4>Objeto de Estudo</h4></div>
+        <p>Fluxo de agendamento de consultas nos Hospitais <strong>Jorginaachel, Neves BemDinha e Jon Pia Gê</strong>.</p>
+      </div>
+      <div class="card c4">
+        <div class="card-header"><div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h4>Problema</h4></div>
+        <p>Sistemas ineficientes, falhas de comunicação e ausência de integração entre os canais de atendimento.</p>
+      </div>
     </div>
 
-    <div class="conteudo">
-      <h4>Problema Identificado</h4>
-      <p>
-        Dificuldade no agendamento de consultas devido a sistemas
-        ineficientes, falhas de comunicação e ausência de integração
-        entre os canais de atendimento.
-      </p>
+    <div class="card c5">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+        <h4>Tecnologias a Utilizar</h4>
+      </div>
+      <div class="techs">
+        <span><i class="fa-brands fa-html5"></i> HTML5</span>
+        <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+        <span><i class="fa-brands fa-python"></i> Django / Python</span>
+        <span><i class="fa-brands fa-whatsapp"></i> WhatsApp API</span>
+        <span><i class="fa-solid fa-database"></i> Base de Dados</span>
+      </div>
     </div>
 
-    <div class="conteudo">
-      <h4>Tecnologias a Utilizar</h4>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Fireworks</li>
-        <li>Django</li>
-        <li>Base de Dados</li>
-      </ul>
-    </div>
-
-    <div class="conteudo">
-      <h4>Grau de Inovação Esperado</h4>
-      <p>
-        Elevado, com foco em usabilidade, acessibilidade e automação
-        do processo de agendamento hospitalar.
-      </p>
-    </div>
-
-    <div class="conteudo">
-      <h4>Estudo Comparado</h4>
-      <p>
-        Comparação com sistemas utilizados em clínicas privadas
-        em Angola e no Brasil, avaliando eficiência e integração digital.
-      </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="card c6">
+        <div class="card-header"><div class="card-icon"><i class="fa-solid fa-rocket"></i></div><h4>Inovação</h4></div>
+        <p>Elevado, com foco em usabilidade, acessibilidade e automação total do processo hospitalar.</p>
+      </div>
+      <div class="card c1">
+        <div class="card-header"><div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div><h4>Estudo Comparado</h4></div>
+        <p>Comparação com clínicas privadas em Angola e Brasil, avaliando eficiência e integração digital.</p>
+      </div>
     </div>
 
   </div>
+
+  <footer>
+    Feito com <i class="fa-solid fa-heart" style="color:#ef4444;"></i> por Rivaldo Mendes da Costa • 2026 • Luanda, Angola
+  </footer>
 </main>
 
 </body>
