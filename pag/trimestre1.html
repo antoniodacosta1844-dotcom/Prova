@@ -1,1 +1,232 @@
 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Trimestre</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#072849;
+      color:#000;
+    }
+
+    /* ===== BARRA DE NAVEGAÇÃO ===== */
+    .header{
+      position:sticky;
+      top:0;
+      background:#e9ecef;
+      border-bottom:3px solid #000;
+      padding:15px 25px;
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+      z-index:10;
+    }
+
+    .header h1 a{
+      text-decoration:none;
+      padding:8px 16px;
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+      font-weight:bold;
+    }
+
+    .header h1 a:hover{
+      background:#000;
+      color:#fff;
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      text-decoration:none;
+      padding:8px 16px;
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      background:#000;
+      color:#fff;
+    }
+
+    /* ===== CABEÇALHO ===== */
+    .cabecalho{
+      background:#ffffff;
+      border-bottom:4px solid #000;
+      text-align:center;
+      padding:25px 10px;
+    }
+
+    .cabecalho img{
+      max-width:220px;
+      margin-bottom:10px;
+    }
+
+    .cabecalho h2{
+      font-size:1.3rem;
+      text-transform:uppercase;
+      font-weight:bold;
+    }
+
+    .cabecalho h3{
+      font-size:1.1rem;
+      margin-top:10px;
+      line-height:1.4;
+    }
+
+    /* ===== CONTEÚDO ===== */
+    main{
+      padding:40px 20px;
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      background:#fff;
+      border:2px solid #000;
+      padding:30px;
+    }
+
+    .conteudo{
+      margin-bottom:30px;
+    }
+
+    .conteudo h4{
+      border-bottom:2px solid #000;
+      padding-bottom:6px;
+      margin-bottom:12px;
+      text-transform:uppercase;
+      font-size:1.2rem;
+    }
+
+    .conteudo p,
+    .conteudo li{
+      font-size:1rem;
+      line-height:1.6;
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    @media(max-width:768px){
+      main{
+        padding:20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVEGAÇÃO -->
+<header class="header">
+  <h1><a href="../index.html">HOME</a></h1>
+
+  <nav>
+    <a href="trimestre1.html">Iº Trimestre</a>
+    <a href="trimestre2.html">IIº Trimestre</a>
+    <a href="trimestre3.html">IIIº Trimestre</a>
+  </nav>
+</header>
+
+<!-- CABEÇALHO -->
+<div class="cabecalho">
+  <img src="../files/1.jpg" alt="Instituto Médio Comercial de Luanda">
+
+  <h2>Instituto Médio Comercial de Luanda</h2>
+
+  <h3>
+    Criação de um Sistema de Agendamento de Consultas Médicas<br>
+    com Suporte Multicanal e Integração ao WhatsApp
+  </h3>
+</div>
+
+<!-- CONTEÚDO COMPLETO -->
+<main>
+  <div class="container">
+
+    <div class="conteudo">
+      <h4>Objetivo Geral</h4>
+      <p>
+        Criar um sistema inteligente e acessível de agendamento hospitalar
+        que otimize o atendimento ao paciente através da integração com
+        múltiplas plataformas de comunicação.
+      </p>
+    </div>
+
+    <div class="conteudo">
+      <h4>Objetivos Específicos</h4>
+      <ul>
+        <li>Permitir a marcação de consultas por web, aplicativo e WhatsApp.</li>
+        <li>Integrar confirmações e lembretes automáticos via WhatsApp.</li>
+        <li>Reduzir o tempo de espera e melhorar a gestão de agendas médicas.</li>
+      </ul>
+    </div>
+
+    <div class="conteudo">
+      <h4>Objeto de Estudo</h4>
+      <p>
+        Fluxo de agendamento de consultas nos Hospitais
+        Jorginaachel, Neves BemDinha e Jon Pia Gê.
+      </p>
+    </div>
+
+    <div class="conteudo">
+      <h4>Problema Identificado</h4>
+      <p>
+        Dificuldade no agendamento de consultas devido a sistemas
+        ineficientes, falhas de comunicação e ausência de integração
+        entre os canais de atendimento.
+      </p>
+    </div>
+
+    <div class="conteudo">
+      <h4>Tecnologias a Utilizar</h4>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Fireworks</li>
+        <li>Django</li>
+        <li>Base de Dados</li>
+      </ul>
+    </div>
+
+    <div class="conteudo">
+      <h4>Grau de Inovação Esperado</h4>
+      <p>
+        Elevado, com foco em usabilidade, acessibilidade e automação
+        do processo de agendamento hospitalar.
+      </p>
+    </div>
+
+    <div class="conteudo">
+      <h4>Estudo Comparado</h4>
+      <p>
+        Comparação com sistemas utilizados em clínicas privadas
+        em Angola e no Brasil, avaliando eficiência e integração digital.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
