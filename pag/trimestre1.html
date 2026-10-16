@@ -3,206 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Trimestre</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+<title>I Trimestre - Trabalhos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter', Arial;
+:root{
+  --cor1:#6a00ff;
+  --cor2:#00d4ff;
+  --cor3:#ff006a;
+  --bg:#08080f;
+  --card:#12121a;
+  --borda:#222235;
 }
-
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:var(--bg);color:#fff;overflow-x:hidden;min-height:100vh;}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(106,0,255,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(0,212,255,0.18) 0%, transparent 45%);
+  pointer-events:none;z-index:-1;
 }
-
-/* HEADER */
+.gradient-text{
+  background:linear-gradient(90deg,var(--cor1),var(--cor2),var(--cor3),var(--cor1));
+  background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:gradientMove 6s linear infinite;
+}
+@keyframes gradientMove{0%{background-position:0%}100%{background-position:300%}}
 
 .header{
-position:sticky;
-top:0;
-padding:20px;
-display:flex;
-justify-content:space-around;
-align-items:center;
-background:#000;
-border-bottom:2px solid #ccff00;
+  position:sticky;top:0;z-index:50;
+  background:rgba(8,8,15,0.85);backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--borda);
+  padding:16px 5%;display:flex;justify-content:space-between;align-items:center;
 }
-
-.header h1 a{
-text-decoration:none;
-font-weight:800;
-font-size:22px;
-
-background: linear-gradient(90deg,#00f5ff,#00ff88,#ccff00,#00f5ff);
-background-size:300%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:gradientMove 6s linear infinite;
-}
-
-/* MENU */
-
-nav{
-display:flex;
-gap:15px;
-}
-
+.header h1 a{font-size:22px;font-weight:800;letter-spacing:3px;text-decoration:none;}
+nav{display:flex;gap:10px;}
 nav a{
-text-decoration:none;
-padding:10px 20px;
-border-radius:40px;
-border:2px solid #ccff00;
-color:#fff;
-font-weight:bold;
-transition:.3s;
+  text-decoration:none;padding:9px 18px;border-radius:100px;
+  border:1px solid var(--borda);color:#aaa;font-weight:600;font-size:0.85rem;transition:0.3s;
+  background:#1a1a28;
+}
+nav a:hover, nav a.active{
+  background:linear-gradient(90deg,var(--cor1),var(--cor2));
+  color:#fff;border-color:transparent;transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(106,0,255,0.3);
 }
 
-nav a:hover{
-background:linear-gradient(90deg,#00f5ff,#00ff88,#ccff00);
-color:#000;
-}
-
-/* ANIMAÇÃO GRADIENTE */
-
-@keyframes gradientMove{
-0%{background-position:0%}
-100%{background-position:300%}
-}
-
-/* MAIN */
-
-main{
-padding:50px;
-display:flex;
-justify-content:center;
-}
-
-/* BOX DO TRIMESTRE */
+main{padding:80px 20px;display:flex;justify-content:center;align-items:center;min-height:calc(100vh - 80px);}
 
 .trimestre-box{
-background:#111;
-padding:40px;
-border-radius:12px;
-border:2px solid #222;
-max-width:800px;
-width:100%;
-text-align:center;
+  background:linear-gradient(145deg,var(--card),#181825);
+  border:1px solid var(--borda);border-radius:28px;
+  padding:50px 40px;max-width:700px;width:100%;text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);position:relative;overflow:hidden;
 }
-
-.trimestre-box h2{
-margin-bottom:30px;
-font-size:36px;
-font-weight:800;
-
-background: linear-gradient(90deg,#00f5ff,#00ff88,#ccff00,#00f5ff);
-background-size:300%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:gradientMove 6s linear infinite;
+.trimestre-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cor1),var(--cor2),transparent);
 }
+.trimestre-box h2{font-size:38px;font-weight:800;margin-bottom:10px;}
+.trimestre-box .sub{color:#888;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:40px;font-family:'JetBrains Mono',monospace;}
 
-/* TRABALHOS */
-
-.trabalhos{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
+.trabalhos{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .trabalhos a{
-padding:18px 30px;
-border-radius:40px;
-border:2px solid #ccff00;
-text-decoration:none;
-color:#fff;
-font-weight:bold;
-font-size:18px;
-transition:.3s;
+  position:relative;padding:28px 20px;border-radius:20px;
+  border:1px solid var(--borda);background:#1c1c2e;
+  text-decoration:none;color:#fff;font-weight:800;font-size:1.1rem;
+  transition:0.4s;overflow:hidden;display:flex;flex-direction:column;gap:10px;
 }
-
+.trabalhos a i{font-size:28px;}
+.trabalhos a small{font-weight:400;font-size:0.8rem;color:#888;}
+.trabalhos a::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--cor1),var(--cor2),var(--cor3));
+  opacity:0;transition:0.4s;z-index:0;
+}
+.trabalhos a > *{position:relative;z-index:1;}
 .trabalhos a:hover{
-background:linear-gradient(90deg,#00f5ff,#00ff88,#ccff00);
-color:#000;
+  transform:translateY(-8px) scale(1.02);
+  border-color:transparent;
+  box-shadow:0 20px 40px rgba(106,0,255,0.4);
 }
-
-/* TRIÂNGULO ANIMADO */
+.trabalhos a:hover::before{opacity:1;}
+.trabalhos a:hover small{color:rgba(255,255,255,0.8);}
+.trabalhos a:hover i{transform:scale(1.2);transition:0.3s;}
 
 .shape{
-position:absolute;
-right:120px;
-top:300px;
-width:200px;
-height:200px;
-background:linear-gradient(135deg,#00f5ff,#00ff88,#ccff00);
-clip-path:polygon(50% 0%,100% 100%,0% 100%);
-animation:rotateShape 10s linear infinite;
+  position:absolute;right:8%;top:280px;width:200px;height:200px;
+  background:linear-gradient(135deg,var(--cor1),var(--cor2),var(--cor3));
+  clip-path:polygon(50% 0%,100% 100%,0% 100%);
+  filter:drop-shadow(0 0 40px rgba(106,0,255,0.5));
+  animation:floatRotate 10s ease-in-out infinite;opacity:0.6;z-index:-1;
 }
-
-@keyframes rotateShape{
-from{transform:rotate(0deg)}
-to{transform:rotate(360deg)}
-}
-
-/* RESPONSIVO */
-
+@keyframes floatRotate{0%,100%{transform:rotate(0deg) translateY(0px)}50%{transform:rotate(180deg) translateY(-15px)}}
 @media(max-width:768px){
-
-.header{
-flex-direction:column;
-gap:10px;
+  .header{flex-direction:column;gap:12px;}
+  main{padding:30px 20px;}
+  .trabalhos{grid-template-columns:1fr;}
+  .trimestre-box{padding:35px 25px;}
+  .trimestre-box h2{font-size:28px;}
+  .shape{display:none;}
 }
-
-main{
-padding:20px;
-}
-
-.shape{
-display:none;
-}
-
-}
-
 </style>
 </head>
-
 <body>
-
 <div class="shape"></div>
-
 <header class="header">
-
-<h1><a href="../index.html">HOME</a></h1>
-
-<nav>
-<a href="trimestre1.html">Iº Trimestre</a>
-<a href="trimestre2.html">IIº Trimestre</a>
-<a href="trimestre3.html">IIIº Trimestre</a>
-</nav>
-
+  <h1><a href="../index.html" class="gradient-text">HOME</a></h1>
+  <nav>
+    <a href="trimestre1.html" class="active">Iº TRIMESTRE</a>
+    <a href="trimestre2.html">IIº TRIMESTRE</a>
+    <a href="trimestre3.html">IIIº TRIMESTRE</a>
+  </nav>
 </header>
 
 <main>
-
-<div class="trimestre-box">
-
-<h2>Trabalhos do Iº Trimestre</h2>
-
-<div class="trabalhos">
-  <a href="t1.html">T1</a>
-<a href="https://antonio-py.github.io/Agende-aqu-/" target="_blank">T2</a>
-</div>
-
-</div>
-
+  <div class="trimestre-box">
+    <h2 class="gradient-text">Trabalhos do Iº Trimestre</h2>
+    <div class="sub">António Miguel • Nº03 • Sala 16 • Classe 13ª</div>
+    <div class="trabalhos">
+      <a href="t1.html">
+        <i class="fa-solid fa-file-code"></i>
+        <span>T1</span>
+        <small>Sistema de Agendamento - Documentação</small>
+      </a>
+      <a href="https://antonio-py.github.io/Agende-aqu-/" target="_blank">
+        <i class="fa-solid fa-rocket"></i>
+        <span>T2 <i class="fa-solid fa-external-link-alt" style="font-size:0.7rem;"></i></span>
+        <small>Projeto Online - Agende Aqui</small>
+      </a>
+    </div>
+  </div>
 </main>
-
 </body>
-  </html>
+</html>
